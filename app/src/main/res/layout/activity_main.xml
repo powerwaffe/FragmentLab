@@ -8,6 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#e68a00"
     tools:context="edu.dtcc.sean.fragmentlab.MainActivity">
 
     <fragment
@@ -18,16 +19,16 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_width="450dp"
-        android:layout_height="300dp" />
+        android:layout_height="225dp" />
 
     <fragment
         android:layout_width="450dp"
-        android:layout_height="300dp"
         android:name="edu.dtcc.sean.fragmentlab.OutputFragment"
         android:layout_marginTop="108dp"
         android:id="@+id/fragment2"
         tools:layout="@layout/output_fragment"
         android:layout_below="@+id/fragment"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_height="260dp" />
 
 </RelativeLayout>
