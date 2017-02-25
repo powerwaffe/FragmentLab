@@ -10,4 +10,24 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="edu.dtcc.sean.fragmentlab.MainActivity">
 
+    <fragment
+        android:name="edu.dtcc.sean.fragmentlab.InputFragment"
+        android:layout_marginTop="45dp"
+        android:id="@+id/fragment"
+        tools:layout="@layout/input_fragment"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="450dp"
+        android:layout_height="300dp" />
+
+    <fragment
+        android:layout_width="450dp"
+        android:layout_height="300dp"
+        android:name="edu.dtcc.sean.fragmentlab.OutputFragment"
+        android:layout_marginTop="108dp"
+        android:id="@+id/fragment2"
+        tools:layout="@layout/output_fragment"
+        android:layout_below="@+id/fragment"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

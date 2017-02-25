@@ -7,7 +7,7 @@ import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements InputFragment.InputFragmentListener {
     private InputFragment inputFragment;
 
     // View objects
@@ -55,16 +55,23 @@ public class MainActivity extends AppCompatActivity {
     private void displayShipping()
     {
         tvBaseCost.setText("$" + String.format("%.02f", inputFragment.getBaseCost()));
-        tvAddedCost.setText("$" + String.format("%.02f", inputFragment.getBaseCost()));
-        tvTotalShippingCost.setText("$" + String.format("%.02f", inputFragment.getBaseCost()));
+        tvAddedCost.setText("$" + String.format("%.02f", inputFragment.getAddedCost()));
+        tvTotalShippingCost.setText("$" + String.format("%.02f", inputFragment.getTotalCost()));
     }
 
-   /** @Override
-    public void createCostDisplay(String base, String added, String total)
-    {
+    @Override
+    public void createCosts(String base, String added, String total) {
         OutputFragment outputFragment = (OutputFragment)
-                getSupportFragmentManager().findFragmentById(R.id.frag);
+                getSupportFragmentManager().findFragmentById(R.id.fragment2);
         outputFragment.setCostText(base, added, total);
     }
-   */
+
+
+    /*public void createCosts(String base, String added, String total)
+    {
+        OutputFragment outputFragment = (OutputFragment)
+                getSupportFragmentManager().findFragmentById(R.id.fragment2);
+        outputFragment.setCostText(base, added, total);
+    }*/
+
 }

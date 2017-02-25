@@ -27,6 +27,7 @@ public class OutputFragment extends Fragment
         tvTotalShippingCost = (TextView) view.findViewById(R.id.tvTotalShippingCost);
         return view;
     }
+
     public void setCostText(String base, String added, String total)
     {
         tvBaseCost.setText(base);

@@ -34,7 +34,7 @@ public class InputFragment extends Fragment
 
     public interface InputFragmentListener
     {
-        public void createCosts (double weight);
+        public void createCosts (String base, String added, String total);
     }
 
     @Override
