@@ -2,16 +2,11 @@ package edu.dtcc.sean.fragmentlab;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-
-/**
- * Created by Sean on 2/25/2017.
- */
 
 public class InputFragment extends Fragment
 {
@@ -26,15 +21,15 @@ public class InputFragment extends Fragment
     static final int BASE_WEIGHT = 16;
     static final double EXTRA_OUNCES = 4.0;
 
-    // Data members
-    private int mWeight;
-    private double mBaseCost;
-    private double mAddedCost;
-    private double mTotalCost;
+    // Data variables
+    private int weight;
+    private double baseCost;
+    private double addedCost;
+    private double totalCost;
 
     public interface InputFragmentListener
     {
-        public void createCosts (String base, String added, String total);
+        public void createShippingCosts(String base, String added, String total);
     }
 
     @Override
@@ -55,52 +50,50 @@ public class InputFragment extends Fragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         View view = inflater.inflate(R.layout.input_fragment, container, false);
-
         etShippingInput = (EditText) view.findViewById(R.id.etShippingInput);
-
         return view;
     }
 
     // Constructor
     public InputFragment()
     {
-        mWeight = 0;
-        mAddedCost = 0.0;
-        mBaseCost = BASE;
-        mTotalCost = 0.0;
+        weight = 0;
+        addedCost = 0.0;
+        baseCost = BASE;
+        totalCost = 0.0;
     }
 
     public void setWeight (int weight)
     {
-        mWeight = weight;
-        computeCosts();
+        this.weight = weight;
+        computeShippingCosts();
     }
 
-    private void computeCosts()
+    private void computeShippingCosts()
     {
-        mAddedCost = 0.0;
-        mBaseCost = BASE;
+        addedCost = 0.0;
+        baseCost = BASE;
 
-        if (mWeight <= 0)
-            mBaseCost = 0.0;
-        else if (mWeight > BASE_WEIGHT)
-            mAddedCost = Math.ceil((double)(mWeight - BASE_WEIGHT) / EXTRA_OUNCES) * ADDED;
+        if (weight <= 0)
+            baseCost = 0.0;
+        else if (weight > BASE_WEIGHT)
+            addedCost = Math.ceil((double)(weight - BASE_WEIGHT) / EXTRA_OUNCES) * ADDED;
 
-        mTotalCost = mBaseCost + mAddedCost;
+        totalCost = baseCost + addedCost;
     }
 
     public double getBaseCost()
     {
-        return mBaseCost;
+        return baseCost;
     }
 
     public double getAddedCost()
     {
-        return mAddedCost;
+        return addedCost;
     }
 
     public double getTotalCost()
     {
-        return mTotalCost;
+        return totalCost;
     }
 }

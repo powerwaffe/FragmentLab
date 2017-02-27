@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements InputFragment.Inp
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Create object
         inputFragment = new InputFragment();
 
         // Set value for EditText
@@ -46,13 +47,13 @@ public class MainActivity extends AppCompatActivity implements InputFragment.Inp
             } catch (NumberFormatException e) {
                 inputFragment.setWeight(0);
             }
-            displayShipping();
+            displayShippingCosts();
         }
 
         public void afterTextChanged(Editable s) {}
     };
 
-    private void displayShipping()
+    private void displayShippingCosts()
     {
         tvBaseCost.setText("$" + String.format("%.02f", inputFragment.getBaseCost()));
         tvAddedCost.setText("$" + String.format("%.02f", inputFragment.getAddedCost()));
@@ -60,18 +61,10 @@ public class MainActivity extends AppCompatActivity implements InputFragment.Inp
     }
 
     @Override
-    public void createCosts(String base, String added, String total) {
-        OutputFragment outputFragment = (OutputFragment)
-                getSupportFragmentManager().findFragmentById(R.id.fragment2);
-        outputFragment.setCostText(base, added, total);
-    }
-
-
-    /*public void createCosts(String base, String added, String total)
+    public void createShippingCosts(String base, String added, String total)
     {
         OutputFragment outputFragment = (OutputFragment)
                 getSupportFragmentManager().findFragmentById(R.id.fragment2);
         outputFragment.setCostText(base, added, total);
-    }*/
-
+    }
 }

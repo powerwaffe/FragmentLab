@@ -11,14 +11,14 @@
         android:ems="10"
         android:layout_marginTop="43dp"
         android:id="@+id/etShippingInput"
-        android:text="0"
+        android:text="@string/_0"
         android:layout_below="@+id/textView"
         android:gravity="center"
         android:layout_centerHorizontal="true"
         android:textSize="20sp" />
 
     <TextView
-        android:text="(in ounces)"
+        android:text="@string/in_ounces"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
@@ -28,10 +28,10 @@
         android:layout_centerHorizontal="true" />
 
     <TextView
-        android:text="Weight of the Package"
+        android:text="@string/weight_of_the_package"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="42dp"
         android:id="@+id/textView"
         android:textStyle="normal|bold"
         android:textSize="22sp"

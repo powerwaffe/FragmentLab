@@ -12,24 +12,23 @@
     tools:context="edu.dtcc.sean.fragmentlab.MainActivity">
 
     <fragment
-        android:layout_width="450dp"
         android:name="edu.dtcc.sean.fragmentlab.OutputFragment"
         android:id="@+id/fragment2"
         tools:layout="@layout/output_fragment"
         android:layout_height="260dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/fragment"
-        android:layout_alignStart="@+id/fragment"
-        android:layout_marginBottom="112dp" />
+        android:layout_alignBottom="@+id/fragment"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_width="420dp" />
 
     <fragment
         android:name="edu.dtcc.sean.fragmentlab.InputFragment"
-        android:layout_marginTop="71dp"
         android:id="@+id/fragment"
         tools:layout="@layout/input_fragment"
-        android:layout_width="450dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+        android:layout_width="400dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_height="260dp" />
 
 </RelativeLayout>
